@@ -19,9 +19,17 @@ do
     fn1="output/${bsnm}.dcsc.out.txt"
     sed /^#/d < $fn > $fnc
     echo -e "-------------------------------------"
-    ./main 0 < $fnc > $fn0 && echo $fn0 && tail -n 6 $fn0
+    ./main 0 < $fnc > $fn0
+    printf "\033[0;33m"
+    echo $fn0
+    printf "\033[0m"
+    tail -n 6 $fn0
     echo -e "\n-------------------------------------"
-    ./main 1 < $fnc > $fn1 && echo $fn1 && tail -n 6 $fn1
+    ./main 1 < $fnc > $fn1
+    printf "\033[0;33m"
+    echo $fn1
+    printf "\033[0m"
+    tail -n 6 $fn1
     echo
     rm $fnc
 done
