@@ -172,8 +172,8 @@ void Graph::read()
     n = int(compress.size());
     node_count = n;
     edge_count = int(edges.size());
-    adj.resize(edges.size());
-    rev.resize(edges.size());
+    adj.resize(node_count);
+    rev.resize(node_count);
     for(auto [u, v] : edges)
         adj.at(u).push_back(v), rev.at(v).push_back(u);
 }
